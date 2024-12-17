@@ -11,17 +11,17 @@ class FilterButton: UIButton {
     
     override var isSelected: Bool {
         didSet {
-//            self.backgroundColor = isSelected ? .baseGreen : .white
+            self.backgroundColor = isSelected ? .baseBlue : #colorLiteral(red: 0.7267200351, green: 0.7303821445, blue: 0.7370898724, alpha: 0.2990738825)
+            self.titleLabel?.font = isSelected ? .semibold(size: 18) : .medium(size: 18)
         }
     }
     
     func commonInit() {
         self.titleLabel?.font = .regular(size: 15)
-        self.setTitleColor(.black, for: .normal)
-        self.backgroundColor = .white
-        self.layer.cornerRadius = 20
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.black.cgColor
+        self.setTitleColor(#colorLiteral(red: 0.631372549, green: 0.631372549, blue: 0.631372549, alpha: 1), for: .normal)
+        self.setTitleColor(.white, for: .selected)
+        self.backgroundColor = #colorLiteral(red: 0.7267200351, green: 0.7303821445, blue: 0.7370898724, alpha: 0.2990738825)
+        self.layer.cornerRadius = 8
     }
     
     override init(frame: CGRect) {

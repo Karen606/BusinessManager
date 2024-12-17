@@ -113,6 +113,36 @@ class CoreDataManager {
             }
         }
     }
+    
+    func fetchTasks(for selectedDate: Date, completion: @escaping ([TaskModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+            
+            let calendar = Calendar.current
+            let startOfDay = calendar.startOfDay(for: selectedDate)
+            let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
+            
+            fetchRequest.predicate = NSPredicate(format: "startDate >= %@ AND startDate < %@", startOfDay as NSDate, endOfDay as NSDate)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var tasksModel: [TaskModel] = []
+                for result in results {
+                    let taskModel = TaskModel(id: result.id ?? UUID(), name: result.name, info: result.info, startDate: result.startDate, endDate: result.endDate, startTime: result.startTime, endTime: result.endTime, priority: Int(result.priority), persons: result.persons ?? [], file: result.file)
+                    tasksModel.append(taskModel)
+                }
+                DispatchQueue.main.async {
+                    completion(tasksModel, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
+
 
     
 //    func changeTaskStatus(id: UUID, status: Int, completion: @escaping (Error?) -> Void) {
