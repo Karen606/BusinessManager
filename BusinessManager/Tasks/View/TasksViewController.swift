@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  TasksViewController.swift
 //  BusinessManager
 //
 //  Created by Karen Khachatryan on 16.12.24.
@@ -8,25 +8,20 @@
 import UIKit
 import Combine
 
-class HomeViewController: UIViewController {
+class TasksViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tasksTableView: UITableView!
     private let viewModel = HomeViewModel.shared
     private var cancellables: Set<AnyCancellable> = []
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         subscribe()
         viewModel.fetchData()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        viewModel.fetchData()
-    }
-    
+
     func setupUI() {
         titleLabel.font = .medium(size: 29)
         tasksTableView.register(UINib(nibName: "TaskTableViewCell", bundle: nil), forCellReuseIdentifier: "TaskTableViewCell")
@@ -44,12 +39,15 @@ class HomeViewController: UIViewController {
             .store(in: &cancellables)
     }
     
+    @IBAction func clickedAddTask(_ sender: UIButton) {
+    }
+    
     deinit {
         viewModel.clear()
     }
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         viewModel.tasks.count
