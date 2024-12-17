@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		009AF263E2A88435D9A6A809 /* Pods_BusinessManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F17AFC5C1CC42FE731B2BF4 /* Pods_BusinessManager.framework */; };
 		6B2502FD2D10AC6A004B50C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2502F12D10AC6A004B50C1 /* AppDelegate.swift */; };
 		6B2502FE2D10AC6A004B50C1 /* BusinessManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B2502F32D10AC6A004B50C1 /* BusinessManager.xcdatamodeld */; };
 		6B2502FF2D10AC6A004B50C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2502F92D10AC6A004B50C1 /* SceneDelegate.swift */; };
@@ -51,9 +52,16 @@
 		6B25035E2D1150E1004B50C1 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B25035C2D1150E1004B50C1 /* TaskTableViewCell.xib */; };
 		6B2503612D1153EE004B50C1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2503602D1153EE004B50C1 /* HomeViewModel.swift */; };
 		6B2503652D115856004B50C1 /* TasksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2503642D115856004B50C1 /* TasksViewModel.swift */; };
+		6B25036A2D115931004B50C1 /* TaskFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2503682D115931004B50C1 /* TaskFormViewController.swift */; };
+		6B25036B2D115931004B50C1 /* TaskFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2503692D115931004B50C1 /* TaskFormViewController.xib */; };
+		6B25036F2D115D46004B50C1 /* PaddingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B25036E2D115D46004B50C1 /* PaddingTextView.swift */; };
+		6BEB94582D1170D00097C98A /* TaskFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB94572D1170D00097C98A /* TaskFormViewModel.swift */; };
+		6BEB945C2D11724B0097C98A /* PersonFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BEB945B2D11724B0097C98A /* PersonFormTableViewCell.xib */; };
+		6BEB945D2D11724B0097C98A /* PersonFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB945A2D11724B0097C98A /* PersonFormTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F17AFC5C1CC42FE731B2BF4 /* Pods_BusinessManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2502C32D10AC33004B50C1 /* BusinessManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2502F12D10AC6A004B50C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B2502F22D10AC6A004B50C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +108,14 @@
 		6B25035C2D1150E1004B50C1 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
 		6B2503602D1153EE004B50C1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6B2503642D115856004B50C1 /* TasksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewModel.swift; sourceTree = "<group>"; };
+		6B2503682D115931004B50C1 /* TaskFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFormViewController.swift; sourceTree = "<group>"; };
+		6B2503692D115931004B50C1 /* TaskFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskFormViewController.xib; sourceTree = "<group>"; };
+		6B25036E2D115D46004B50C1 /* PaddingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextView.swift; sourceTree = "<group>"; };
+		6BEB94572D1170D00097C98A /* TaskFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFormViewModel.swift; sourceTree = "<group>"; };
+		6BEB945A2D11724B0097C98A /* PersonFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonFormTableViewCell.swift; sourceTree = "<group>"; };
+		6BEB945B2D11724B0097C98A /* PersonFormTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonFormTableViewCell.xib; sourceTree = "<group>"; };
+		8A95D69BBD3D3182019A55C8 /* Pods-BusinessManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessManager.debug.xcconfig"; path = "Target Support Files/Pods-BusinessManager/Pods-BusinessManager.debug.xcconfig"; sourceTree = "<group>"; };
+		E1D2683490D2DA318E3DD644 /* Pods-BusinessManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessManager.release.xcconfig"; path = "Target Support Files/Pods-BusinessManager/Pods-BusinessManager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,17 +123,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				009AF263E2A88435D9A6A809 /* Pods_BusinessManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D67413F3AEAA9EF0DB9E708 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F17AFC5C1CC42FE731B2BF4 /* Pods_BusinessManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6B2502BA2D10AC33004B50C1 = {
 			isa = PBXGroup;
 			children = (
 				6B2502FB2D10AC6A004B50C1 /* BusinessManager */,
 				6B2502C42D10AC33004B50C1 /* Products */,
+				885EA0F3703663644182F567 /* Pods */,
+				3D67413F3AEAA9EF0DB9E708 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +159,7 @@
 		6B2502FB2D10AC6A004B50C1 /* BusinessManager */ = {
 			isa = PBXGroup;
 			children = (
+				6B2503662D115915004B50C1 /* TaskForm */,
 				6B25034E2D10C816004B50C1 /* Contact */,
 				6B2503492D10C7EF004B50C1 /* Finance */,
 				6B2503442D10C7CE004B50C1 /* Calendar */,
@@ -163,6 +191,7 @@
 		6B2503062D10ACEB004B50C1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6B25036E2D115D46004B50C1 /* PaddingTextView.swift */,
 				6B2503072D10AD15004B50C1 /* BaseButton.swift */,
 				6B2503082D10AD15004B50C1 /* BaseSwitch.swift */,
 				6B2503092D10AD15004B50C1 /* BaseTextField.swift */,
@@ -301,6 +330,51 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		6B2503662D115915004B50C1 /* TaskForm */ = {
+			isa = PBXGroup;
+			children = (
+				6BEB94592D11721F0097C98A /* Cell */,
+				6BEB94562D1170BC0097C98A /* ViewModel */,
+				6B2503672D11591D004B50C1 /* View */,
+			);
+			path = TaskForm;
+			sourceTree = "<group>";
+		};
+		6B2503672D11591D004B50C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B2503682D115931004B50C1 /* TaskFormViewController.swift */,
+				6B2503692D115931004B50C1 /* TaskFormViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6BEB94562D1170BC0097C98A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6BEB94572D1170D00097C98A /* TaskFormViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6BEB94592D11721F0097C98A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6BEB945A2D11724B0097C98A /* PersonFormTableViewCell.swift */,
+				6BEB945B2D11724B0097C98A /* PersonFormTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		885EA0F3703663644182F567 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A95D69BBD3D3182019A55C8 /* Pods-BusinessManager.debug.xcconfig */,
+				E1D2683490D2DA318E3DD644 /* Pods-BusinessManager.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -308,17 +382,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B2502D92D10AC35004B50C1 /* Build configuration list for PBXNativeTarget "BusinessManager" */;
 			buildPhases = (
+				6B768E4BC4703067AE02905A /* [CP] Check Pods Manifest.lock */,
 				6B2502BF2D10AC33004B50C1 /* Sources */,
 				6B2502C02D10AC33004B50C1 /* Frameworks */,
 				6B2502C12D10AC33004B50C1 /* Resources */,
+				59D71A8BE0272F79732FBC00 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = BusinessManager;
-			packageProductDependencies = (
-			);
 			productName = BusinessManager;
 			productReference = 6B2502C32D10AC33004B50C1 /* BusinessManager.app */;
 			productType = "com.apple.product-type.application";
@@ -368,6 +442,7 @@
 				6B25032D2D10ADC9004B50C1 /* Inter-Bold.ttf in Resources */,
 				6B2503342D10AF58004B50C1 /* Montserrat-Medium.ttf in Resources */,
 				6B2503522D10C82C004B50C1 /* ContactViewController.xib in Resources */,
+				6BEB945C2D11724B0097C98A /* PersonFormTableViewCell.xib in Resources */,
 				6B2503352D10AF58004B50C1 /* Montserrat-SemiBold.ttf in Resources */,
 				6B25035E2D1150E1004B50C1 /* TaskTableViewCell.xib in Resources */,
 				6B25034D2D10C809004B50C1 /* FinanceViewController.xib in Resources */,
@@ -375,6 +450,7 @@
 				6B2503302D10AEC5004B50C1 /* SFProText-Semibold.ttf in Resources */,
 				6B25033F2D10B657004B50C1 /* TasksViewController.xib in Resources */,
 				6B2503312D10AEC5004B50C1 /* SFProText-Regular.ttf in Resources */,
+				6B25036B2D115931004B50C1 /* TaskFormViewController.xib in Resources */,
 				6B2503012D10AC6A004B50C1 /* Assets.xcassets in Resources */,
 				6B2503032D10AC6A004B50C1 /* LaunchScreen.storyboard in Resources */,
 				6B2503042D10AC6A004B50C1 /* Root.storyboard in Resources */,
@@ -384,24 +460,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		59D71A8BE0272F79732FBC00 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusinessManager/Pods-BusinessManager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusinessManager/Pods-BusinessManager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BusinessManager/Pods-BusinessManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B768E4BC4703067AE02905A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BusinessManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6B2502BF2D10AC33004B50C1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6B2503472D10C7E3004B50C1 /* CalendarViewController.swift in Sources */,
+				6BEB945D2D11724B0097C98A /* PersonFormTableViewCell.swift in Sources */,
 				6B2503572D114E0F004B50C1 /* TaskModel.swift in Sources */,
 				6B2503172D10AD15004B50C1 /* UIView.swift in Sources */,
 				6B2503182D10AD15004B50C1 /* String.swift in Sources */,
 				6B2503192D10AD15004B50C1 /* BaseButton.swift in Sources */,
 				6B2503392D10B619004B50C1 /* HomeViewController.swift in Sources */,
 				6B25035A2D114F40004B50C1 /* CoreDataManager.swift in Sources */,
+				6BEB94582D1170D00097C98A /* TaskFormViewModel.swift in Sources */,
 				6B25031A2D10AD15004B50C1 /* Date.swift in Sources */,
 				6B25031B2D10AD15004B50C1 /* Double.swift in Sources */,
 				6B25031C2D10AD15004B50C1 /* PricesTextField.swift in Sources */,
 				6B25031D2D10AD15004B50C1 /* ViewController.swift in Sources */,
 				6B25031E2D10AD15004B50C1 /* BaseTextField.swift in Sources */,
 				6B25031F2D10AD15004B50C1 /* ShadowView.swift in Sources */,
+				6B25036A2D115931004B50C1 /* TaskFormViewController.swift in Sources */,
 				6B2503652D115856004B50C1 /* TasksViewModel.swift in Sources */,
 				6B2503202D10AD15004B50C1 /* FilterButton.swift in Sources */,
 				6B2503212D10AD15004B50C1 /* Font.swift in Sources */,
@@ -415,6 +536,7 @@
 				6B2502FF2D10AC6A004B50C1 /* SceneDelegate.swift in Sources */,
 				6B2503002D10AC6A004B50C1 /* RootViewController.swift in Sources */,
 				6B25034C2D10C809004B50C1 /* FinanceViewController.swift in Sources */,
+				6B25036F2D115D46004B50C1 /* PaddingTextView.swift in Sources */,
 				6B25033E2D10B657004B50C1 /* TasksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +565,7 @@
 /* Begin XCBuildConfiguration section */
 		6B2502DA2D10AC35004B50C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A95D69BBD3D3182019A55C8 /* Pods-BusinessManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -473,6 +596,7 @@
 		};
 		6B2502DB2D10AC35004B50C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1D2683490D2DA318E3DD644 /* Pods-BusinessManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -538,7 +662,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -601,7 +725,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

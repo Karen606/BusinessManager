@@ -16,7 +16,7 @@ struct TaskModel {
     var startTime: Date?
     var endTime: Date?
     var priority: Int?
-    var persons: [String] = []
+    var persons: [String] = [""]
     var file: Data?
 }
 

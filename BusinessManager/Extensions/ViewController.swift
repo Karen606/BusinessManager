@@ -12,8 +12,8 @@ extension UIViewController {
     func setNavigationTitle(title: String) {
         let titleLabel = UILabel()
         titleLabel.text = title
-//        titleLabel.textColor = .baseBlack
-        titleLabel.font = .medium(size: 28)
+        titleLabel.textColor = .black
+        titleLabel.font = .regular(size: 22)
         titleLabel.textAlignment = .center
         titleLabel.sizeToFit()
         self.navigationItem.titleView = titleLabel
@@ -28,8 +28,8 @@ extension UIViewController {
     
     func setNaviagtionCancelButton() {
         let cancelButton = UIButton(type: .custom)
-        cancelButton.titleLabel?.font = .regular(size: 18)
-//        cancelButton.setTitleColor(.baseRed, for: .normal)
+        cancelButton.titleLabel?.font = .regular(size: 17)
+        cancelButton.setTitleColor(#colorLiteral(red: 0.7764705882, green: 0.1490196078, blue: 0.1803921569, alpha: 1), for: .normal)
         cancelButton.setTitle("Cancel", for: .normal)
         cancelButton.addTarget(self, action: #selector(clickedBack), for: .touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: cancelButton)

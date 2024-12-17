@@ -12,7 +12,7 @@ class TasksViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tasksTableView: UITableView!
-    private let viewModel = HomeViewModel.shared
+    private let viewModel = TasksViewModel.shared
     private var cancellables: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
@@ -40,6 +40,15 @@ class TasksViewController: UIViewController {
     }
     
     @IBAction func clickedAddTask(_ sender: UIButton) {
+        let taskFormVC = TaskFormViewController(nibName: "TaskFormViewController", bundle: nil)
+        taskFormVC.completion = { [weak self] in
+            if let self = self {
+                self.viewModel.fetchData()
+            }
+        }
+        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(taskFormVC, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
     
     deinit {

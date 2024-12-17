@@ -16,9 +16,10 @@ class BaseButton: UIButton {
     }
     
     func commonInit() {
-//        self.setTitleColor(.baseWhite, for: .normal)
-//        self.backgroundColor = .baseBlue
+        self.setTitleColor(.white, for: .normal)
+        self.backgroundColor = .baseBlue
         self.layer.cornerRadius = 6
+        self.addShadow()
     }
     
     override init(frame: CGRect) {

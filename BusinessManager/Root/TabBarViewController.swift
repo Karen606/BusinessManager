@@ -25,8 +25,7 @@ class TabBarViewController: UITabBarController {
         
         let contactVC = ContactViewController(nibName: "ContactViewController", bundle: nil)
         contactVC.tabBarItem = UITabBarItem(title: "Contact", image: .contactTab.withRenderingMode(.alwaysOriginal), tag: 3)
-
-        self.viewControllers = [homeVC, promptrVC, calendarVC, financeVC, contactVC]
+        self.viewControllers = [UINavigationController(rootViewController: homeVC), UINavigationController(rootViewController: promptrVC), UINavigationController(rootViewController: calendarVC), UINavigationController(rootViewController: financeVC), UINavigationController(rootViewController: contactVC)]
 
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()

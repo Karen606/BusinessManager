@@ -1,0 +1,6 @@
+framework module Pods_BusinessManager {
+  umbrella header "Pods-BusinessManager-umbrella.h"
+
+  export *
+  module * { export * }
+}
