@@ -53,6 +53,7 @@ class TaskFormViewController: UIViewController {
         setNavigationTitle(title: "Adding a task")
         setNaviagtionCancelButton()
         titleLabels.forEach({ $0.font = .regular(size: 16) })
+        createButton.titleLabel?.font = .semiboldSFPro(size: 20)
         descriptionTextView.layer.borderColor = UIColor.black.cgColor
         descriptionTextView.layer.borderWidth = 1
         descriptionTextView.layer.cornerRadius = 6
@@ -167,7 +168,7 @@ class TaskFormViewController: UIViewController {
     
     @objc func startTimePickerValueChanged() {
         endTimePicker.minimumDate = startTimePicker.date
-        viewModel.task.startTime = startDatePicker.date
+        viewModel.task.startTime = startTimePicker.date
         startTimeTextField.text = startTimePicker.date.toString(format: "HH:mm")
     }
     

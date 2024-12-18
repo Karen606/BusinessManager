@@ -39,6 +39,7 @@ class TransactionFormViewController: UIViewController {
     func setupUI() {
         setNaviagtionCancelButton()
         setNavigationTitle(title: "Add a transaction")
+        saveButton.titleLabel?.font = .semiboldSFPro(size: 20)
         titleLabels.forEach({ $0.font = .regular(size: 16) })
         amountTextField.setupRightViewIcon(.dollar, size: CGSize(width: 40, height: 40))
         dateTextField.setupRightViewIcon(.calendar, size: CGSize(width: 40, height: 40))
