@@ -74,3 +74,16 @@ extension BaseTextField {
         leftViewMode = .always
     }
 }
+
+extension UITextField {
+    func setLeftViewIcon(_ image: UIImage) {
+        let icon = UIImageView(frame:CGRect(x: 0, y: 0, width: 26, height: 26))
+        icon.image = image
+        icon.contentMode = .center
+        let iconContainerView: UIView = UIView(frame:CGRect(x: 0, y: 0, width: 26, height: 26))
+        iconContainerView.isUserInteractionEnabled = false
+        iconContainerView.addSubview(icon)
+        leftView = iconContainerView
+        leftViewMode = .always
+    }
+}

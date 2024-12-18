@@ -286,5 +286,62 @@ class CoreDataManager {
             }
         }
     }
+    
+    func saveContact(contactModel: ContactModel, completion: @escaping (Error?) -> Void) {
+        let id = contactModel.id
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Contact> = Contact.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                let contact: Contact
+                
+                if let existingContact = results.first {
+                    contact = existingContact
+                } else {
+                    contact = Contact(context: backgroundContext)
+                    contact.id = id
+                }
+                
+                contact.name = contactModel.name
+                contact.surname = contactModel.surname
+                contact.email = contactModel.email
+                contact.phone = contactModel.phone
+                contact.tags = contactModel.tags
+                try backgroundContext.save()
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+
+    func fetchContacts(completion: @escaping ([ContactModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Contact> = Contact.fetchRequest()
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var contactsModel: [ContactModel] = []
+                for result in results {
+                    let contactModel = ContactModel(id: result.id ?? UUID(), name: result.name, surname: result.surname, email: result.email, phone: result.phone, tags: result.tags)
+                    contactsModel.append(contactModel)
+                }
+                DispatchQueue.main.async {
+                    completion(contactsModel, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
 }
 

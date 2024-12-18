@@ -72,6 +72,13 @@
 		6BEB948A2D12D81E0097C98A /* EventFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BEB94882D12D81E0097C98A /* EventFormViewController.xib */; };
 		6BEB948D2D12DBDF0097C98A /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB948C2D12DBDF0097C98A /* EventModel.swift */; };
 		6BEB94902D12E2120097C98A /* EventFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB948F2D12E2120097C98A /* EventFormViewModel.swift */; };
+		6BEB94952D12F3350097C98A /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB94942D12F3350097C98A /* ContactModel.swift */; };
+		6BEB94982D12F3D00097C98A /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB94972D12F3D00097C98A /* ContactsViewModel.swift */; };
+		6BEB949C2D12F8660097C98A /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB949A2D12F8660097C98A /* ContactTableViewCell.swift */; };
+		6BEB949D2D12F8660097C98A /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BEB949B2D12F8660097C98A /* ContactTableViewCell.xib */; };
+		6BEB94A12D12FB050097C98A /* ContactFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB949F2D12FB050097C98A /* ContactFormViewController.swift */; };
+		6BEB94A22D12FB050097C98A /* ContactFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BEB94A02D12FB050097C98A /* ContactFormViewController.xib */; };
+		6BEB94A52D12FD6D0097C98A /* ContactFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB94A42D12FD6D0097C98A /* ContactFormViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +149,13 @@
 		6BEB94882D12D81E0097C98A /* EventFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventFormViewController.xib; sourceTree = "<group>"; };
 		6BEB948C2D12DBDF0097C98A /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		6BEB948F2D12E2120097C98A /* EventFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFormViewModel.swift; sourceTree = "<group>"; };
+		6BEB94942D12F3350097C98A /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		6BEB94972D12F3D00097C98A /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		6BEB949A2D12F8660097C98A /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		6BEB949B2D12F8660097C98A /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		6BEB949F2D12FB050097C98A /* ContactFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormViewController.swift; sourceTree = "<group>"; };
+		6BEB94A02D12FB050097C98A /* ContactFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactFormViewController.xib; sourceTree = "<group>"; };
+		6BEB94A42D12FD6D0097C98A /* ContactFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormViewModel.swift; sourceTree = "<group>"; };
 		8A95D69BBD3D3182019A55C8 /* Pods-BusinessManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessManager.debug.xcconfig"; path = "Target Support Files/Pods-BusinessManager/Pods-BusinessManager.debug.xcconfig"; sourceTree = "<group>"; };
 		E1D2683490D2DA318E3DD644 /* Pods-BusinessManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessManager.release.xcconfig"; path = "Target Support Files/Pods-BusinessManager/Pods-BusinessManager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +201,7 @@
 		6B2502FB2D10AC6A004B50C1 /* BusinessManager */ = {
 			isa = PBXGroup;
 			children = (
+				6BEB94912D12EA2D0097C98A /* ContactForm */,
 				6BEB94852D12D8070097C98A /* Event */,
 				6BEB94712D122CBD0097C98A /* TransactionForm */,
 				6B2503662D115915004B50C1 /* TaskForm */,
@@ -297,8 +312,10 @@
 		6B25034E2D10C816004B50C1 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				6B25034F2D10C82C004B50C1 /* ContactViewController.swift */,
-				6B2503502D10C82C004B50C1 /* ContactViewController.xib */,
+				6BEB94992D12F84B0097C98A /* Cell */,
+				6BEB94962D12F3C10097C98A /* ViewModel */,
+				6BEB94932D12F32B0097C98A /* Model */,
+				6BEB94922D12EA350097C98A /* View */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -520,6 +537,66 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		6BEB94912D12EA2D0097C98A /* ContactForm */ = {
+			isa = PBXGroup;
+			children = (
+				6BEB94A32D12FD620097C98A /* ViewModel */,
+				6BEB949E2D12FAF80097C98A /* View */,
+			);
+			path = ContactForm;
+			sourceTree = "<group>";
+		};
+		6BEB94922D12EA350097C98A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B25034F2D10C82C004B50C1 /* ContactViewController.swift */,
+				6B2503502D10C82C004B50C1 /* ContactViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6BEB94932D12F32B0097C98A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6BEB94942D12F3350097C98A /* ContactModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6BEB94962D12F3C10097C98A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6BEB94972D12F3D00097C98A /* ContactsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6BEB94992D12F84B0097C98A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6BEB949A2D12F8660097C98A /* ContactTableViewCell.swift */,
+				6BEB949B2D12F8660097C98A /* ContactTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6BEB949E2D12FAF80097C98A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6BEB949F2D12FB050097C98A /* ContactFormViewController.swift */,
+				6BEB94A02D12FB050097C98A /* ContactFormViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6BEB94A32D12FD620097C98A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6BEB94A42D12FD6D0097C98A /* ContactFormViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		885EA0F3703663644182F567 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,6 +667,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BEB949D2D12F8660097C98A /* ContactTableViewCell.xib in Resources */,
 				6B25032A2D10ADC9004B50C1 /* Inter-Medium.ttf in Resources */,
 				6B25032B2D10ADC9004B50C1 /* Inter-Regular.ttf in Resources */,
 				6BEB94842D12C73B0097C98A /* TransactionTableViewCell.xib in Resources */,
@@ -610,6 +688,7 @@
 				6BEB94752D122CDC0097C98A /* TransactionFormViewController.xib in Resources */,
 				6BEB948A2D12D81E0097C98A /* EventFormViewController.xib in Resources */,
 				6B2503012D10AC6A004B50C1 /* Assets.xcassets in Resources */,
+				6BEB94A22D12FB050097C98A /* ContactFormViewController.xib in Resources */,
 				6B2503032D10AC6A004B50C1 /* LaunchScreen.storyboard in Resources */,
 				6B2503042D10AC6A004B50C1 /* Root.storyboard in Resources */,
 				6B25033A2D10B619004B50C1 /* HomeViewController.xib in Resources */,
@@ -680,23 +759,28 @@
 				6BEB94582D1170D00097C98A /* TaskFormViewModel.swift in Sources */,
 				6BEB94892D12D81E0097C98A /* EventFormViewController.swift in Sources */,
 				6BEB947F2D12C5A20097C98A /* FinanceViewModel.swift in Sources */,
+				6BEB94A52D12FD6D0097C98A /* ContactFormViewModel.swift in Sources */,
 				6B25031A2D10AD15004B50C1 /* Date.swift in Sources */,
 				6B25031B2D10AD15004B50C1 /* Double.swift in Sources */,
 				6B25031C2D10AD15004B50C1 /* PricesTextField.swift in Sources */,
+				6BEB94A12D12FB050097C98A /* ContactFormViewController.swift in Sources */,
 				6B25031D2D10AD15004B50C1 /* ViewController.swift in Sources */,
 				6BEB947C2D12BD100097C98A /* TransactionFormViewModel.swift in Sources */,
 				6B25031E2D10AD15004B50C1 /* BaseTextField.swift in Sources */,
 				6B25031F2D10AD15004B50C1 /* ShadowView.swift in Sources */,
 				6B25036A2D115931004B50C1 /* TaskFormViewController.swift in Sources */,
 				6B2503652D115856004B50C1 /* TasksViewModel.swift in Sources */,
+				6BEB949C2D12F8660097C98A /* ContactTableViewCell.swift in Sources */,
 				6B2503202D10AD15004B50C1 /* FilterButton.swift in Sources */,
 				6B2503212D10AD15004B50C1 /* Font.swift in Sources */,
 				6B2503222D10AD15004B50C1 /* BaseSwitch.swift in Sources */,
 				6B2503432D10B7E9004B50C1 /* TabBarViewController.swift in Sources */,
+				6BEB94982D12F3D00097C98A /* ContactsViewModel.swift in Sources */,
 				6B25035D2D1150E1004B50C1 /* TaskTableViewCell.swift in Sources */,
 				6B2502FD2D10AC6A004B50C1 /* AppDelegate.swift in Sources */,
 				6BEB94792D12BC480097C98A /* TransactionModel.swift in Sources */,
 				6B2502FE2D10AC6A004B50C1 /* BusinessManager.xcdatamodeld in Sources */,
+				6BEB94952D12F3350097C98A /* ContactModel.swift in Sources */,
 				6B2503512D10C82C004B50C1 /* ContactViewController.swift in Sources */,
 				6BEB94762D122CDD0097C98A /* TransactionFormViewController.swift in Sources */,
 				6B2503612D1153EE004B50C1 /* HomeViewModel.swift in Sources */,

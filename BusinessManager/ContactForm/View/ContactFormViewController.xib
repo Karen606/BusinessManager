@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactFormViewController" customModule="BusinessManager" customModuleProvider="target">
+            <connections>
+                <outlet property="createButton" destination="7eX-kN-oJM" id="8IV-RU-7wj"/>
+                <outlet property="emailTextField" destination="ZAk-EJ-it5" id="kB6-jI-UYG"/>
+                <outlet property="nameTextField" destination="ee4-SJ-grC" id="FVM-rQ-acR"/>
+                <outlet property="phoneTextField" destination="gUr-YI-3Sq" id="pXu-Ag-vUd"/>
+                <outlet property="surnameTextField" destination="wcZ-eA-Vh3" id="cfk-QF-IgJ"/>
+                <outlet property="tagsTextField" destination="At3-Gl-Wer" id="U98-pU-xGV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="titleLabels" destination="l8n-g3-ksE" collectionClass="NSMutableArray" id="Q19-hn-WT9"/>
+                <outletCollection property="titleLabels" destination="oRG-0Z-b4x" collectionClass="NSMutableArray" id="j18-pA-eWB"/>
+                <outletCollection property="titleLabels" destination="ys9-jI-Ete" collectionClass="NSMutableArray" id="NF8-sQ-hzQ"/>
+                <outletCollection property="titleLabels" destination="eTY-8G-kpI" collectionClass="NSMutableArray" id="RSi-cp-qAw"/>
+                <outletCollection property="titleLabels" destination="PuF-DB-CKB" collectionClass="NSMutableArray" id="3Su-gd-dyH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="aSl-GE-xQs">
+                    <rect key="frame" x="36" y="83" width="325" height="414"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcf-Jx-8J9">
+                            <rect key="frame" x="0.0" y="0.0" width="325" height="66"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ee4-SJ-grC" customClass="BaseTextField" customModule="BusinessManager" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="21" width="325" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="bPt-TS-twV"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8n-g3-ksE">
+                                    <rect key="frame" x="0.0" y="0.0" width="45" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="l8n-g3-ksE" firstAttribute="top" secondItem="rcf-Jx-8J9" secondAttribute="top" id="IYn-h2-cw8"/>
+                                <constraint firstItem="ee4-SJ-grC" firstAttribute="leading" secondItem="rcf-Jx-8J9" secondAttribute="leading" id="P2x-hS-LUE"/>
+                                <constraint firstItem="ee4-SJ-grC" firstAttribute="top" secondItem="l8n-g3-ksE" secondAttribute="bottom" id="PPW-RJ-MVc"/>
+                                <constraint firstAttribute="bottom" secondItem="ee4-SJ-grC" secondAttribute="bottom" id="SEa-aL-ey4"/>
+                                <constraint firstAttribute="trailing" secondItem="ee4-SJ-grC" secondAttribute="trailing" id="bdh-EZ-FJd"/>
+                                <constraint firstItem="l8n-g3-ksE" firstAttribute="leading" secondItem="ee4-SJ-grC" secondAttribute="leading" id="bp4-3y-zdX"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHP-VP-s2Z">
+                            <rect key="frame" x="0.0" y="87" width="325" height="66"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-eA-Vh3" customClass="BaseTextField" customModule="BusinessManager" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="21" width="325" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="WjI-Cj-5Ah"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRG-0Z-b4x">
+                                    <rect key="frame" x="0.0" y="0.0" width="68.333333333333329" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="oRG-0Z-b4x" firstAttribute="leading" secondItem="wcZ-eA-Vh3" secondAttribute="leading" id="Lfu-GX-ZHM"/>
+                                <constraint firstItem="wcZ-eA-Vh3" firstAttribute="top" secondItem="oRG-0Z-b4x" secondAttribute="bottom" id="Xx8-K2-9Ih"/>
+                                <constraint firstAttribute="bottom" secondItem="wcZ-eA-Vh3" secondAttribute="bottom" id="dIF-6G-dsm"/>
+                                <constraint firstItem="wcZ-eA-Vh3" firstAttribute="leading" secondItem="dHP-VP-s2Z" secondAttribute="leading" id="q9w-YK-GA0"/>
+                                <constraint firstAttribute="trailing" secondItem="wcZ-eA-Vh3" secondAttribute="trailing" id="su6-fc-zxo"/>
+                                <constraint firstItem="oRG-0Z-b4x" firstAttribute="top" secondItem="dHP-VP-s2Z" secondAttribute="top" id="tWO-Yi-bU9"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0c-o3-2jl">
+                            <rect key="frame" x="0.0" y="174" width="325" height="66"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAk-EJ-it5" customClass="BaseTextField" customModule="BusinessManager" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="21" width="325" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="sxP-1u-S31"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ys9-jI-Ete">
+                                    <rect key="frame" x="0.0" y="0.0" width="40.666666666666664" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="ZAk-EJ-it5" secondAttribute="bottom" id="BTt-kc-VNg"/>
+                                <constraint firstItem="ZAk-EJ-it5" firstAttribute="leading" secondItem="L0c-o3-2jl" secondAttribute="leading" id="G5x-TV-yG3"/>
+                                <constraint firstItem="ys9-jI-Ete" firstAttribute="leading" secondItem="ZAk-EJ-it5" secondAttribute="leading" id="GkO-em-Nmx"/>
+                                <constraint firstItem="ZAk-EJ-it5" firstAttribute="top" secondItem="ys9-jI-Ete" secondAttribute="bottom" id="igt-zT-K5V"/>
+                                <constraint firstItem="ys9-jI-Ete" firstAttribute="top" secondItem="L0c-o3-2jl" secondAttribute="top" id="ptL-21-5uE"/>
+                                <constraint firstAttribute="trailing" secondItem="ZAk-EJ-it5" secondAttribute="trailing" id="vYs-tY-luy"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sA-SX-bb2">
+                            <rect key="frame" x="0.0" y="261" width="325" height="66"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gUr-YI-3Sq" customClass="BaseTextField" customModule="BusinessManager" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="21" width="325" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="uYi-79-pac"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTY-8G-kpI">
+                                    <rect key="frame" x="0.0" y="0.0" width="111.66666666666667" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="gUr-YI-3Sq" secondAttribute="trailing" id="RDY-hv-qWQ"/>
+                                <constraint firstItem="eTY-8G-kpI" firstAttribute="leading" secondItem="gUr-YI-3Sq" secondAttribute="leading" id="ZbF-Ik-ZAR"/>
+                                <constraint firstItem="eTY-8G-kpI" firstAttribute="top" secondItem="0sA-SX-bb2" secondAttribute="top" id="hFe-3l-Bhx"/>
+                                <constraint firstAttribute="bottom" secondItem="gUr-YI-3Sq" secondAttribute="bottom" id="meV-IX-8dY"/>
+                                <constraint firstItem="gUr-YI-3Sq" firstAttribute="leading" secondItem="0sA-SX-bb2" secondAttribute="leading" id="rvg-ku-CkM"/>
+                                <constraint firstItem="gUr-YI-3Sq" firstAttribute="top" secondItem="eTY-8G-kpI" secondAttribute="bottom" id="zDg-N8-aBU"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2u-KP-Mux">
+                            <rect key="frame" x="0.0" y="348" width="325" height="66"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="At3-Gl-Wer" customClass="BaseTextField" customModule="BusinessManager" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="21" width="325" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="9nR-V8-5RA"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuF-DB-CKB">
+                                    <rect key="frame" x="0.0" y="0.0" width="36" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="At3-Gl-Wer" secondAttribute="bottom" id="42N-X8-29O"/>
+                                <constraint firstItem="PuF-DB-CKB" firstAttribute="leading" secondItem="At3-Gl-Wer" secondAttribute="leading" id="QX4-6g-jkA"/>
+                                <constraint firstItem="At3-Gl-Wer" firstAttribute="leading" secondItem="D2u-KP-Mux" secondAttribute="leading" id="ak3-PB-F7F"/>
+                                <constraint firstAttribute="trailing" secondItem="At3-Gl-Wer" secondAttribute="trailing" id="coj-dR-dn4"/>
+                                <constraint firstItem="PuF-DB-CKB" firstAttribute="top" secondItem="D2u-KP-Mux" secondAttribute="top" id="kOi-Jk-Czq"/>
+                                <constraint firstItem="At3-Gl-Wer" firstAttribute="top" secondItem="PuF-DB-CKB" secondAttribute="bottom" id="sIN-fZ-DAy"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eX-kN-oJM" customClass="BaseButton" customModule="BusinessManager" customModuleProvider="target">
+                    <rect key="frame" x="38" y="757" width="325" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="dEP-HT-nyu"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Create a contact"/>
+                    <connections>
+                        <action selector="clickedCreate:" destination="-1" eventType="touchUpInside" id="Ujm-RJ-NPL"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="background"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aSl-GE-xQs" secondAttribute="trailing" constant="32" id="4Y2-8A-sbr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7eX-kN-oJM" secondAttribute="bottom" constant="16" id="5Hf-ae-Zzs"/>
+                <constraint firstItem="aSl-GE-xQs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="36" id="5oJ-Kh-3qY"/>
+                <constraint firstItem="aSl-GE-xQs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="Q6V-Ja-gxx"/>
+                <constraint firstItem="7eX-kN-oJM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="38" id="Tms-8m-kB0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7eX-kN-oJM" secondAttribute="trailing" constant="30" id="iIC-G9-WSo"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="pYR-It-lju" appends="YES" id="dEE-rJ-6CE"/>
+            </connections>
+            <point key="canvasLocation" x="138" y="20"/>
+        </view>
+        <tapGestureRecognizer id="pYR-It-lju">
+            <connections>
+                <action selector="handleTapGesture:" destination="-1" id="EMl-Qx-32d"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="0.92199999094009399" green="0.97600001096725464" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
