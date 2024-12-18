@@ -79,6 +79,7 @@
 		6BEB94A12D12FB050097C98A /* ContactFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB949F2D12FB050097C98A /* ContactFormViewController.swift */; };
 		6BEB94A22D12FB050097C98A /* ContactFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BEB94A02D12FB050097C98A /* ContactFormViewController.xib */; };
 		6BEB94A52D12FD6D0097C98A /* ContactFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB94A42D12FD6D0097C98A /* ContactFormViewModel.swift */; };
+		6BEB94A82D131CA70097C98A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB94A72D131CA70097C98A /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +157,7 @@
 		6BEB949F2D12FB050097C98A /* ContactFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormViewController.swift; sourceTree = "<group>"; };
 		6BEB94A02D12FB050097C98A /* ContactFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactFormViewController.xib; sourceTree = "<group>"; };
 		6BEB94A42D12FD6D0097C98A /* ContactFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormViewModel.swift; sourceTree = "<group>"; };
+		6BEB94A72D131CA70097C98A /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		8A95D69BBD3D3182019A55C8 /* Pods-BusinessManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessManager.debug.xcconfig"; path = "Target Support Files/Pods-BusinessManager/Pods-BusinessManager.debug.xcconfig"; sourceTree = "<group>"; };
 		E1D2683490D2DA318E3DD644 /* Pods-BusinessManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessManager.release.xcconfig"; path = "Target Support Files/Pods-BusinessManager/Pods-BusinessManager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,6 +203,7 @@
 		6B2502FB2D10AC6A004B50C1 /* BusinessManager */ = {
 			isa = PBXGroup;
 			children = (
+				6BEB94A62D131C6B0097C98A /* NotificationManager */,
 				6BEB94912D12EA2D0097C98A /* ContactForm */,
 				6BEB94852D12D8070097C98A /* Event */,
 				6BEB94712D122CBD0097C98A /* TransactionForm */,
@@ -597,6 +600,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		6BEB94A62D131C6B0097C98A /* NotificationManager */ = {
+			isa = PBXGroup;
+			children = (
+				6BEB94A72D131CA70097C98A /* NotificationManager.swift */,
+			);
+			path = NotificationManager;
+			sourceTree = "<group>";
+		};
 		885EA0F3703663644182F567 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -786,6 +797,7 @@
 				6B2503612D1153EE004B50C1 /* HomeViewModel.swift in Sources */,
 				6B2502FF2D10AC6A004B50C1 /* SceneDelegate.swift in Sources */,
 				6B2503002D10AC6A004B50C1 /* RootViewController.swift in Sources */,
+				6BEB94A82D131CA70097C98A /* NotificationManager.swift in Sources */,
 				6B25034C2D10C809004B50C1 /* FinanceViewController.swift in Sources */,
 				6B25036F2D115D46004B50C1 /* PaddingTextView.swift in Sources */,
 				6BEB948D2D12DBDF0097C98A /* EventModel.swift in Sources */,

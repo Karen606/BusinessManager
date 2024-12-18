@@ -194,6 +194,11 @@ class EventFormViewController: UIViewController {
             if let error = error {
                 self.showErrorAlert(message: error.localizedDescription)
             } else {
+                NotificationManager.shared.requestNotificationPermission { granted in
+                    if granted {
+                        NotificationManager.shared.scheduleNotification(for: self.viewModel.event)
+                    }
+                }
                 self.completion?()
                 self.navigationController?.popViewController(animated: true)
             }
