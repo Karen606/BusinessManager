@@ -142,8 +142,63 @@ class CoreDataManager {
             }
         }
     }
+    
+    func saveTransaction(transactionModel: TransactionModel, completion: @escaping (Error?) -> Void) {
+        let id = transactionModel.id
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Transaction> = Transaction.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                let transaction: Transaction
+                
+                if let existingTransaction = results.first {
+                    transaction = existingTransaction
+                } else {
+                    transaction = Transaction(context: backgroundContext)
+                    transaction.id = id
+                }
+                
+                transaction.type = Int32(transactionModel.type ?? 0)
+                transaction.amount = transactionModel.amount ?? 0
+                transaction.date = transactionModel.date
+                transaction.info = transactionModel.info
+                
+                try backgroundContext.save()
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
 
-
+    func fetchTransaction(completion: @escaping ([TransactionModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Transaction> = Transaction.fetchRequest()
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var transactionsModel: [TransactionModel] = []
+                for result in results {
+                    let transactionModel = TransactionModel(id: result.id ?? UUID(), type: Int(result.type), amount: result.amount, date: result.date, info: result.info)
+                    transactionsModel.append(transactionModel)
+                }
+                DispatchQueue.main.async {
+                    completion(transactionsModel, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
     
 //    func changeTaskStatus(id: UUID, status: Int, completion: @escaping (Error?) -> Void) {
 //        let backgroundContext = persistentContainer.newBackgroundContext()
