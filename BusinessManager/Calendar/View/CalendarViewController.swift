@@ -32,7 +32,7 @@ class CalendarViewController: UIViewController {
     }
     
     func subscribe() {
-        viewModel.$tasks
+        viewModel.$events
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 guard let self = self else { return }
@@ -48,6 +48,15 @@ class CalendarViewController: UIViewController {
     }
     
     @IBAction func clickedAddTask(_ sender: UIButton) {
+        let eventFormVC = EventFormViewController(nibName: "EventFormViewController", bundle: nil)
+        eventFormVC.completion = { [weak self] in
+            if let self = self {
+                self.viewModel.fetchData()
+            }
+        }
+        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(eventFormVC, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
 }
 
@@ -60,7 +69,7 @@ extension CalendarViewController: FSCalendarDelegate {
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        viewModel.tasks.count
+        viewModel.events.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,7 +78,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskDetailsTableViewCell", for: indexPath) as! TaskDetailsTableViewCell
-        cell.configure(task: viewModel.tasks[indexPath.section])
+        cell.configure(event: viewModel.events[indexPath.section])
         return cell
     }
     

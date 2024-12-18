@@ -9,14 +9,14 @@ import Foundation
 
 class CalendarViewModel {
     static let shared = CalendarViewModel()
-    var data: [TaskModel] = []
-    @Published var tasks: [TaskModel] = []
+    var data: [EventModel] = []
+    @Published var events: [EventModel] = []
     var selectedDate = Date()
-    var selectedPriority = 0
+    var selectedType = 0
     private init() {}
     
     func fetchData() {
-        CoreDataManager.shared.fetchTasks(for: selectedDate) { [weak self] tasks, _ in
+        CoreDataManager.shared.fetchEvents(for: selectedDate) { [weak self] tasks, _ in
             guard let self = self else { return }
             self.data = tasks
             self.filter()
@@ -24,11 +24,11 @@ class CalendarViewModel {
     }
     
     func filter() {
-        tasks = data.filter({ $0.priority == selectedPriority })
+        events = data.filter({ $0.event == selectedType })
     }
     
     func choosePriority(index: Int) {
-        selectedPriority = index
+        selectedType = index
         filter()
     }
     
@@ -39,6 +39,6 @@ class CalendarViewModel {
     
     func clear() {
         data = []
-        tasks = []
+        events = []
     }
 }

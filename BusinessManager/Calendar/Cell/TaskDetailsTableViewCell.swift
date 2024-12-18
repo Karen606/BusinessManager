@@ -13,7 +13,7 @@ class TaskDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var moreButton: UIButton!
-    private var task: TaskModel?
+    private var event: EventModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,24 +26,24 @@ class TaskDetailsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(task: TaskModel) {
-        self.task = task
-        priorityImageView.image = UIImage(named: "priority\(Priority.allCases[task.priority ?? 0].rawValue)")
-        nameLabel.text = "\(task.startTime?.toString(format: "HH:mm") ?? "") \(task.name ?? "")"
+    func configure(event: EventModel) {
+        self.event = event
+        let image = event.event == 0 ? UIImage.priorityHigh : UIImage.priorityMedium
+        priorityImageView.image = image
+        nameLabel.text = "\(event.startDate?.toString(format: "HH:mm") ?? "") \(EventType.allCases[event.event ?? 0].rawValue)"
         detailsLabel.text = ""
     }
     
     override func prepareForReuse() {
-        task = nil
+        event = nil
         moreButton.isSelected = false
     }
     
     @IBAction func clickedShowMore(_ sender: UIButton) {
-        guard let task = task else { return }
+        guard let event = event else { return }
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
-            let persons = task.persons.joined(separator: ", ")
-            detailsLabel.text = "End: \(task.endTime?.toString(format: "HH:mm") ?? "")\nDescription: \(task.info ?? "") \nPersons: \(persons)"
+            detailsLabel.text = "End: \(event.endDate?.toString(format: "HH:mm") ?? "")\nPlace: \(event.place ?? "")\nDescription: \(event.info ?? "") \nCategory: \(EventCategory.allCases[event.category ?? 0].rawValue)"
         } else {
             detailsLabel.text = ""
         }

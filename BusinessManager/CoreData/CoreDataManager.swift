@@ -200,111 +200,91 @@ class CoreDataManager {
         }
     }
     
-//    func changeTaskStatus(id: UUID, status: Int, completion: @escaping (Error?) -> Void) {
-//        let backgroundContext = persistentContainer.newBackgroundContext()
-//        backgroundContext.perform {
-//            let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
-//            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
-//            
-//            do {
-//                let results = try backgroundContext.fetch(fetchRequest)
-//                if let order = results.first {
-//                    order.status = Int32(status)
-//                } else {
-//                    completion(NSError(domain: "CoreDataManager", code: 404, userInfo: [NSLocalizedDescriptionKey: "Task not found"]))
-//                }
-//                try backgroundContext.save()
-//                DispatchQueue.main.async {
-//                    completion(nil)
-//                }
-//            } catch {
-//                DispatchQueue.main.async {
-//                    completion(error)
-//                }
-//            }
-//        }
-//    }
-//    
-//    func removeTask(by id: UUID, completion: @escaping (Error?) -> Void) {
-//        let backgroundContext = persistentContainer.newBackgroundContext()
-//        backgroundContext.perform {
-//            let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
-//            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
-//            
-//            do {
-//                let results = try backgroundContext.fetch(fetchRequest)
-//                if let taskToRemove = results.first {
-//                    backgroundContext.delete(taskToRemove)
-//                    try backgroundContext.save()
-//                    DispatchQueue.main.async {
-//                        completion(nil)
-//                    }
-//                } else {
-//                    DispatchQueue.main.async {
-//                        completion(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Task not found"]))
-//                    }
-//                }
-//            } catch {
-//                DispatchQueue.main.async {
-//                    completion(error)
-//                }
-//            }
-//        }
-//    }
-//    
-//    func saveTip(tipModel: TipModel, completion: @escaping (Error?) -> Void) {
-//        let id = tipModel.id
-//        let backgroundContext = persistentContainer.newBackgroundContext()
-//        backgroundContext.perform {
-//            let fetchRequest: NSFetchRequest<Tip> = Tip.fetchRequest()
-//            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
-//            
-//            do {
-//                let results = try backgroundContext.fetch(fetchRequest)
-//                let tip: Tip
-//                
-//                if let existingTip = results.first {
-//                    tip = existingTip
-//                } else {
-//                    tip = Tip(context: backgroundContext)
-//                    tip.id = id
-//                }
-//                
-//                tip.info = tipModel.info
-//                tip.header = tipModel.header
-//                
-//                try backgroundContext.save()
-//                DispatchQueue.main.async {
-//                    completion(nil)
-//                }
-//            } catch {
-//                DispatchQueue.main.async {
-//                    completion(error)
-//                }
-//            }
-//        }
-//    }
-//    
-//    func fetchTips(completion: @escaping ([TipModel], Error?) -> Void) {
-//        let backgroundContext = persistentContainer.newBackgroundContext()
-//        backgroundContext.perform {
-//            let fetchRequest: NSFetchRequest<Tip> = Tip.fetchRequest()
-//            do {
-//                let results = try backgroundContext.fetch(fetchRequest)
-//                var tipsModel: [TipModel] = []
-//                for result in results {
-//                    let tipModel = TipModel(id: result.id ?? UUID(), header: result.header, info: result.info)
-//                    tipsModel.append(tipModel)
-//                }
-//                DispatchQueue.main.async {
-//                    completion(tipsModel, nil)
-//                }
-//            } catch {
-//                DispatchQueue.main.async {
-//                    completion([], error)
-//                }
-//            }
-//        }
-//    }
+    func saveEvent(eventModel: EventModel, completion: @escaping (Error?) -> Void) {
+        let id = eventModel.id
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Event> = Event.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                let event: Event
+                
+                if let existingEvent = results.first {
+                    event = existingEvent
+                } else {
+                    event = Event(context: backgroundContext)
+                    event.id = id
+                }
+                
+                event.event = Int32(eventModel.event ?? 0)
+                event.startDate = eventModel.startDate
+                event.endDate = eventModel.endDate
+                event.info = eventModel.info
+                event.place = eventModel.place
+                event.reminder = Int32(eventModel.reminder ?? 0)
+                event.category = Int32(eventModel.category ?? 0)
+                try backgroundContext.save()
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+
+    func fetchEvents(completion: @escaping ([EventModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Event> = Event.fetchRequest()
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var eventsModel: [EventModel] = []
+                for result in results {
+                    let eventModel = EventModel(id: result.id ?? UUID(), event: Int(result.event), startDate: result.startDate, endDate: result.endDate, place: result.place, info: result.info, reminder: Int(result.reminder), category: Int(result.category))
+                    eventsModel.append(eventModel)
+                }
+                DispatchQueue.main.async {
+                    completion(eventsModel, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
+    
+    func fetchEvents(for selectedDate: Date, completion: @escaping ([EventModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Event> = Event.fetchRequest()
+            let calendar = Calendar.current
+            let startOfDay = calendar.startOfDay(for: selectedDate)
+            let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
+            
+            fetchRequest.predicate = NSPredicate(format: "startDate >= %@ AND startDate < %@", startOfDay as NSDate, endOfDay as NSDate)
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                
+                var eventsModel: [EventModel] = []
+                for result in results {
+                    let eventModel = EventModel(id: result.id ?? UUID(), event: Int(result.event), startDate: result.startDate, endDate: result.endDate, place: result.place, info: result.info, reminder: Int(result.reminder), category: Int(result.category))
+                    eventsModel.append(eventModel)
+                }
+                DispatchQueue.main.async {
+                    completion(eventsModel, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
 }
 
