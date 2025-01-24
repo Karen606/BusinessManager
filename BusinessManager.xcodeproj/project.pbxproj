@@ -55,6 +55,10 @@
 		6B25036A2D115931004B50C1 /* TaskFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2503682D115931004B50C1 /* TaskFormViewController.swift */; };
 		6B25036B2D115931004B50C1 /* TaskFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2503692D115931004B50C1 /* TaskFormViewController.xib */; };
 		6B25036F2D115D46004B50C1 /* PaddingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B25036E2D115D46004B50C1 /* PaddingTextView.swift */; };
+		6BE4831A2D310E0500E3D820 /* PrivacyWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE483192D310E0500E3D820 /* PrivacyWebViewController.swift */; };
+		6BE4831F2D310EC500E3D820 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4831E2D310EC500E3D820 /* NetworkManager.swift */; };
+		6BE483212D3111FD00E3D820 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BE483202D3111FD00E3D820 /* GoogleService-Info.plist */; };
+		6BE483232D31129600E3D820 /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 6BE483222D31129600E3D820 /* codemagic.yaml */; };
 		6BEB94582D1170D00097C98A /* TaskFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB94572D1170D00097C98A /* TaskFormViewModel.swift */; };
 		6BEB945C2D11724B0097C98A /* PersonFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BEB945B2D11724B0097C98A /* PersonFormTableViewCell.xib */; };
 		6BEB945D2D11724B0097C98A /* PersonFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB945A2D11724B0097C98A /* PersonFormTableViewCell.swift */; };
@@ -133,6 +137,10 @@
 		6B2503682D115931004B50C1 /* TaskFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFormViewController.swift; sourceTree = "<group>"; };
 		6B2503692D115931004B50C1 /* TaskFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskFormViewController.xib; sourceTree = "<group>"; };
 		6B25036E2D115D46004B50C1 /* PaddingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextView.swift; sourceTree = "<group>"; };
+		6BE483192D310E0500E3D820 /* PrivacyWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyWebViewController.swift; sourceTree = "<group>"; };
+		6BE4831E2D310EC500E3D820 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6BE483202D3111FD00E3D820 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6BE483222D31129600E3D820 /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
 		6BEB94572D1170D00097C98A /* TaskFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFormViewModel.swift; sourceTree = "<group>"; };
 		6BEB945A2D11724B0097C98A /* PersonFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonFormTableViewCell.swift; sourceTree = "<group>"; };
 		6BEB945B2D11724B0097C98A /* PersonFormTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonFormTableViewCell.xib; sourceTree = "<group>"; };
@@ -185,6 +193,7 @@
 		6B2502BA2D10AC33004B50C1 = {
 			isa = PBXGroup;
 			children = (
+				6BE483222D31129600E3D820 /* codemagic.yaml */,
 				6B2502FB2D10AC6A004B50C1 /* BusinessManager */,
 				6B2502C42D10AC33004B50C1 /* Products */,
 				885EA0F3703663644182F567 /* Pods */,
@@ -203,6 +212,8 @@
 		6B2502FB2D10AC6A004B50C1 /* BusinessManager */ = {
 			isa = PBXGroup;
 			children = (
+				6BE4831D2D310EBD00E3D820 /* NetworkManager */,
+				6BE483182D310DFD00E3D820 /* Privacy */,
 				6BEB94A62D131C6B0097C98A /* NotificationManager */,
 				6BEB94912D12EA2D0097C98A /* ContactForm */,
 				6BEB94852D12D8070097C98A /* Event */,
@@ -219,6 +230,7 @@
 				6B2502F12D10AC6A004B50C1 /* AppDelegate.swift */,
 				6B2502F22D10AC6A004B50C1 /* Assets.xcassets */,
 				6B2502F32D10AC6A004B50C1 /* BusinessManager.xcdatamodeld */,
+				6BE483202D3111FD00E3D820 /* GoogleService-Info.plist */,
 				6B2502F42D10AC6A004B50C1 /* Info.plist */,
 				6B2502F62D10AC6A004B50C1 /* LaunchScreen.storyboard */,
 				6B2502F92D10AC6A004B50C1 /* SceneDelegate.swift */,
@@ -399,6 +411,22 @@
 				6B2503692D115931004B50C1 /* TaskFormViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6BE483182D310DFD00E3D820 /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				6BE483192D310E0500E3D820 /* PrivacyWebViewController.swift */,
+			);
+			path = Privacy;
+			sourceTree = "<group>";
+		};
+		6BE4831D2D310EBD00E3D820 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				6BE4831E2D310EC500E3D820 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		6BEB94562D1170BC0097C98A /* ViewModel */ = {
@@ -684,6 +712,7 @@
 				6BEB94842D12C73B0097C98A /* TransactionTableViewCell.xib in Resources */,
 				6B25032C2D10ADC9004B50C1 /* Inter-SemiBold.ttf in Resources */,
 				6B25032D2D10ADC9004B50C1 /* Inter-Bold.ttf in Resources */,
+				6BE483232D31129600E3D820 /* codemagic.yaml in Resources */,
 				6BEB946C2D11F2DB0097C98A /* TaskDetailsTableViewCell.xib in Resources */,
 				6B2503342D10AF58004B50C1 /* Montserrat-Medium.ttf in Resources */,
 				6B2503522D10C82C004B50C1 /* ContactViewController.xib in Resources */,
@@ -691,6 +720,7 @@
 				6B2503352D10AF58004B50C1 /* Montserrat-SemiBold.ttf in Resources */,
 				6B25035E2D1150E1004B50C1 /* TaskTableViewCell.xib in Resources */,
 				6B25034D2D10C809004B50C1 /* FinanceViewController.xib in Resources */,
+				6BE483212D3111FD00E3D820 /* GoogleService-Info.plist in Resources */,
 				6B2503482D10C7E3004B50C1 /* CalendarViewController.xib in Resources */,
 				6B2503302D10AEC5004B50C1 /* SFProText-Semibold.ttf in Resources */,
 				6B25033F2D10B657004B50C1 /* TasksViewController.xib in Resources */,
@@ -776,6 +806,7 @@
 				6B25031C2D10AD15004B50C1 /* PricesTextField.swift in Sources */,
 				6BEB94A12D12FB050097C98A /* ContactFormViewController.swift in Sources */,
 				6B25031D2D10AD15004B50C1 /* ViewController.swift in Sources */,
+				6BE4831F2D310EC500E3D820 /* NetworkManager.swift in Sources */,
 				6BEB947C2D12BD100097C98A /* TransactionFormViewModel.swift in Sources */,
 				6B25031E2D10AD15004B50C1 /* BaseTextField.swift in Sources */,
 				6B25031F2D10AD15004B50C1 /* ShadowView.swift in Sources */,
@@ -791,6 +822,7 @@
 				6B2502FD2D10AC6A004B50C1 /* AppDelegate.swift in Sources */,
 				6BEB94792D12BC480097C98A /* TransactionModel.swift in Sources */,
 				6B2502FE2D10AC6A004B50C1 /* BusinessManager.xcdatamodeld in Sources */,
+				6BE4831A2D310E0500E3D820 /* PrivacyWebViewController.swift in Sources */,
 				6BEB94952D12F3350097C98A /* ContactModel.swift in Sources */,
 				6B2503512D10C82C004B50C1 /* ContactViewController.swift in Sources */,
 				6BEB94762D122CDD0097C98A /* TransactionFormViewController.swift in Sources */,
@@ -848,7 +880,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Karen.BusinessManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ManageMastery.WV14Application;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -879,7 +911,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Karen.BusinessManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ManageMastery.WV14Application;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
